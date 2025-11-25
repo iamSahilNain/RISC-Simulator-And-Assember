@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISC-V Assembler and Simulator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .editor-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .editor-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .CodeMirror {
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .output-container {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        .output-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .output-container::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 4px;
+        }
+        .btn-run {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-run:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        .error-message {
+            color: #dc3545;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+        .loading {
+            display: none;
+            margin-left: 10px;
+            color: #666;
+            font-weight: 500;
+        }
+        .spinner-border {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-width: 0.15em;
+            border-color: currentColor transparent currentColor currentColor;
+        }
+        .status-message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status-message.success {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        .status-message.error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        .info-message {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4" style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #2d3748; text-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                RISC-V Assembler and Simulator
+            </span>
+        </h1>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="editor-container">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3>Code Input</h3>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="inputTypeSwitch">
+                            <label class="form-check-label" for="inputTypeSwitch">Machine Code Input</label>
+                        </div>
+                    </div>
+                    <textarea id="assembly-editor"></textarea>
+                    <div class="mt-3 d-flex align-items-center">
+                        <button class="btn btn-run" onclick="assembleAndRun()" id="run-button">
+                            Assemble and Run
+                        </button>
+                        <div class="loading" id="loading-spinner">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Processing...
+                        </div>
+                    </div>
+                    <div class="status-message" id="status-message"></div>
+                    <div class="info-message" id="info-message"></div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="editor-container">
+                    <h3>Example Programs</h3>
+                    <select class="form-select mb-3 shadow-sm" id="example-select" onchange="loadExample()" style="border-radius: 8px; border-color: #ddd;">
+                        <option value="">Select an example</option>
+                        {% for name, code in examples.items() %}
+                        <option value="{{ name }}">{{ name|title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="editor-container">
+                    <h3>Machine Code</h3>
+                    <div id="machine-code" class="output-container">
+                        Machine code will appear here...
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="editor-container">
+                    <h3>Simulation Output</h3>
+                    <div id="simulation-output" class="output-container">
+                        Simulation output will appear here...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/gas/gas.min.js"></script>
+    <script>
+        // Initialize CodeMirror
+        var editor = CodeMirror.fromTextArea(document.getElementById("assembly-editor"), {
+            mode: "gas",
+            theme: "monokai",
+            lineNumbers: false,  // Disable line numbers
+            indentUnit: 4,
+            lineWrapping: true
+        });
+
+        // Example programs
+        const examples = {{ examples|tojson|safe }};
+
+        function loadExample() {
+            const selected = document.getElementById("example-select").value;
+            if (selected && examples[selected]) {
+                editor.setValue(examples[selected]);
+                clearOutputs();
+                document.getElementById("inputTypeSwitch").checked = false;
+            }
+        }
+
+        function clearOutputs() {
+            document.getElementById("machine-code").textContent = "Machine code will appear here...";
+            document.getElementById("simulation-output").textContent = "Simulation output will appear here...";
+            document.getElementById("status-message").style.display = "none";
+            document.getElementById("info-message").style.display = "none";
+        }
+
+        function showError(message) {
+            const statusMsg = document.getElementById("status-message");
+            statusMsg.textContent = message;
+            statusMsg.className = "status-message error";
+            statusMsg.style.display = "block";
+        }
+
+        function showSuccess(message) {
+            const statusMsg = document.getElementById("status-message");
+            statusMsg.textContent = message;
+            statusMsg.className = "status-message success";
+            statusMsg.style.display = "block";
+        }
+
+        function showInfo(message) {
+            const infoMsg = document.getElementById("info-message");
+            infoMsg.textContent = message;
+            infoMsg.style.display = "block";
+        }
+
+        function setLoading(loading) {
+            const button = document.getElementById("run-button");
+            const spinner = document.getElementById("loading-spinner");
+            button.disabled = loading;
+            spinner.style.display = loading ? "block" : "none";
+        }
+
+        async function assembleAndRun() {
+            const code = editor.getValue().trim();
+            const isMachineCode = document.getElementById("inputTypeSwitch").checked;
+            
+            if (!code) {
+                showError("Please enter some code first.");
+                return;
+            }
+
+            setLoading(true);
+            clearOutputs();
+            
+            try {
+                // First, assemble the code or process machine code
+                const assembleResponse = await fetch('/assemble', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code: code })
+                });
+                
+                const assembleData = await assembleResponse.json();
+                
+                if (!assembleResponse.ok) {
+                    showError(assembleData.error || "Assembly failed");
+                    document.getElementById("machine-code").textContent = "Assembly failed";
+                    return;
+                }
+
+                // Handle machine code translation
+                if (assembleData.assembly_code) {
+                    showInfo(assembleData.message);
+                    editor.setValue(assembleData.assembly_code);
+                    document.getElementById("machine-code").textContent = assembleData.machine_code;
+                    document.getElementById("inputTypeSwitch").checked = false;
+                    return;
+                }
+                
+                document.getElementById("machine-code").textContent = assembleData.machine_code;
+                
+                // Then, simulate the machine code
+                const simulateResponse = await fetch('/simulate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code: assembleData.machine_code })
+                });
+                
+                const simulateData = await simulateResponse.json();
+                
+                if (!simulateResponse.ok) {
+                    showError(simulateData.error || "Simulation failed");
+                    document.getElementById("simulation-output").textContent = "Simulation failed";
+                    return;
+                }
+                
+                document.getElementById("simulation-output").textContent = simulateData.output;
+                showSuccess("Program executed successfully!");
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showError("An unexpected error occurred. Please try again.");
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        // Update button text based on input type
+        document.getElementById("inputTypeSwitch").addEventListener("change", function(e) {
+            const button = document.getElementById("run-button");
+            if (e.target.checked) {
+                button.textContent = "Translate and Run";
+                editor.setOption("mode", null);  // Plain text mode for machine code
+            } else {
+                button.textContent = "Assemble and Run";
+                editor.setOption("mode", "gas");  // Assembly mode
+            }
+            clearOutputs();
+        });
+    </script>
+</body>
+</html> 
