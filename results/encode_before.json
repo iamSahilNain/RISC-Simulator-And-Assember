@@ -1,0 +1,215 @@
+{
+  "n": 600,
+  "seed": 1,
+  "checked": 566,
+  "mismatches": 34,
+  "by_op": {
+    "jal": 34
+  },
+  "examples": [
+    {
+      "line": "jal ra,-118734",
+      "project": null,
+      "reference": 2200842479,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s7,191060",
+      "project": null,
+      "reference": 626191343,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal sp,323972",
+      "project": null,
+      "reference": 407171439,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s4,233298",
+      "project": null,
+      "reference": 1966312047,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a7,619906",
+      "project": null,
+      "reference": 1479112943,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t0,818134",
+      "project": null,
+      "reference": 1031566063,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t2,760260",
+      "project": null,
+      "reference": 475763695,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t4,666748",
+      "project": null,
+      "reference": 1205481199,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s3,-334234",
+      "project": null,
+      "reference": 3865766383,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a5,80074",
+      "project": null,
+      "reference": 212940783,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t5,856234",
+      "project": null,
+      "reference": 179117935,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s2,677114",
+      "project": null,
+      "reference": 1336564079,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a4,-938954",
+      "project": null,
+      "reference": 3279005551,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t2,429338",
+      "project": null,
+      "reference": 1370915823,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t1,19244",
+      "project": null,
+      "reference": 852509551,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s10,-345536",
+      "project": null,
+      "reference": 2753215855,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a6,-101020",
+      "project": null,
+      "reference": 3595466863,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a2,565406",
+      "project": null,
+      "reference": 166241903,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s3,605578",
+      "project": null,
+      "reference": 1488533999,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t5,839170",
+      "project": null,
+      "reference": 1614597999,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a3,-786940",
+      "project": null,
+      "reference": 3763599087,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s4,-968682",
+      "project": null,
+      "reference": 2171681391,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s4,-101536",
+      "project": null,
+      "reference": 3054402159,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s2,-367610",
+      "project": null,
+      "reference": 3228199279,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s9,-989174",
+      "project": null,
+      "reference": 2159078639,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t6,381818",
+      "project": null,
+      "reference": 933617647,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t2,-296124",
+      "project": null,
+      "reference": 3025892335,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal t6,-562886",
+      "project": null,
+      "reference": 2478272495,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s11,690118",
+      "project": null,
+      "reference": 2087357935,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s3,305178",
+      "project": null,
+      "reference": 28617199,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a3,917048",
+      "project": null,
+      "reference": 1671296751,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal s6,571544",
+      "project": null,
+      "reference": 161004399,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a4,533628",
+      "project": null,
+      "reference": 1204299631,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    },
+    {
+      "line": "jal a4,-707520",
+      "project": null,
+      "reference": 3288676207,
+      "note": "project rejected: Traceback (most recent call last):\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Assembler.py\", line 30"
+    }
+  ]
+}

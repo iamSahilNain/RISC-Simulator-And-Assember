@@ -1,0 +1,8 @@
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+output.log
+output.txt
+machine_code.mc
+results/*.tmp

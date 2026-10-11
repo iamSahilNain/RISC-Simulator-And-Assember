@@ -1,0 +1,67 @@
+[
+ {
+  "seed": 1004,
+  "reduced": [
+   "addi s2,zero,2",
+   "jalr ra,t4,12",
+   "lui t0,-2147483648",
+   "or a7,s4,s2",
+   "beq zero,zero,0"
+  ],
+  "detail": "a7: sim 0x00000000 ref 0x00000002"
+ },
+ {
+  "seed": 1006,
+  "reduced": [
+   "sltiu a1,a0,-8",
+   "beq zero,zero,0"
+  ],
+  "detail": "a1: sim 0x00000000 ref 0x00000001"
+ },
+ {
+  "seed": 1014,
+  "reduced": [
+   "auipc t4,0",
+   "jalr ra,t4,12",
+   "addi s1,s2,7",
+   "jal ra,4",
+   "beq zero,zero,0"
+  ],
+  "detail": "ra: sim 0x00000008 ref 0x00000010"
+ },
+ {
+  "seed": 1021,
+  "reduced": [
+   "sltiu t2,a2,-2048",
+   "beq zero,zero,0"
+  ],
+  "detail": "t2: sim 0x00000000 ref 0x00000001"
+ },
+ {
+  "seed": 1022,
+  "reduced": [
+   "sltiu a1,t0,-1",
+   "beq zero,zero,0"
+  ],
+  "detail": "a1: sim 0x00000000 ref 0x00000001"
+ },
+ {
+  "seed": 1028,
+  "reduced": [
+   "addi a0,s3,7",
+   "jalr ra,t4,12",
+   "sw t2,596(s11)",
+   "sub a0,t0,a5",
+   "beq zero,zero,0"
+  ],
+  "detail": "a0: sim 0x00000007 ref 0x00000000"
+ },
+ {
+  "seed": 1033,
+  "reduced": [
+   "sltiu a6,a4,-8",
+   "beq zero,zero,0"
+  ],
+  "detail": "a6: sim 0x00000000 ref 0x00000001"
+ }
+]

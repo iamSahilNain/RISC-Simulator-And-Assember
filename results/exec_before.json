@@ -1,0 +1,570 @@
+{
+  "n": 120,
+  "seed": 1000,
+  "counts": {
+    "agree": 27,
+    "sim-crash": 64,
+    "diverge": 29
+  },
+  "seconds": 35.3,
+  "candidates": [
+    {
+      "seed": 1001,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '64315'\n",
+      "source": "lui s11,65536\naddi t1,zero,2047\naddi a7,zero,-1\naddi s3,zero,-8\naddi s0,zero,-2048\nsw s4,124(s11)\nbltu a1,zero,16\naddi t0,s11,-1221\nsw s0,528(s11)\nsw s2,1036(s11)\nand a7,t2,a4\nsll s0,a1,t0\nlui a1,-2147483648\nbltu s3,a1,8\naddi a6,s2,1\naddi t1,t2,2047\nsltiu t1,s1,1\nblt a3,s0,16\nsw a2,120(s11)\nlui a1,305418240\nlui a6,-4096\nsltiu s4,t0,7\nbge a7,a4,12\nsltiu a1,s0,-1\naddi a1,a3,1\njal ra,8\nsw a2,344(s11)\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1003,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi s4,zero,-100\naddi a3,zero,100\naddi a0,zero,-8\naddi s0,zero,-100\nsltiu a5,s11,-1778\naddi a5,a2,-1\nslt a7,t1,a3\nsltu a7,s2,a1\nslt s1,s1,s11\nbne t0,a7,12\nxor s3,a6,s1\nsltiu a7,s0,0\nsltu a2,t2,s3\nlw a7,1324(s11)\nsw s3,8(s11)\nsll a2,a7,zero\naddi a1,s3,863\nsw a4,764(s11)\nsltiu t1,t1,0\nand a0,a0,a7\nsub s4,a5,a3\nsub a7,a4,a5\nsrl a4,t2,zero\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1004,
+      "kind": "diverge",
+      "detail": "t2: sim 0x00000000 ref 0x00010002, a7: sim 0x00000000 ref 0x00010002",
+      "source": "lui s11,65536\naddi s2,zero,2\naddi t1,zero,749\naddi a6,zero,-1\naddi a4,zero,1\naddi t0,s1,1\nbge a4,t0,12\nsub s4,t1,a4\naddi t0,a7,-100\nlui s4,65536\nbgeu a7,s3,12\nor s1,a0,s4\nsll t0,s3,s1\nauipc t4,0\njalr ra,t4,12\nlui t0,-2147483648\nor a7,s4,s2\nsw s2,1992(s11)\nlw s2,1948(s11)\nlw s1,896(s11)\nlui t1,-4096\nsub t2,a7,zero\nblt s3,s1,12\nadd s0,a5,s11\nand t0,a1,a5\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1005,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi s4,zero,-2048\naddi a7,zero,-8\naddi a1,zero,-100\naddi a3,zero,-2048\naddi t6,zero,2\naddi a4,t1,-100\naddi t6,t6,-1\nbne t6,zero,-8\nsltu s0,s4,a1\naddi t6,zero,3\nsw a3,192(s11)\nlui a4,65536\nlui s2,-2147483648\naddi t6,t6,-1\nbne t6,zero,-16\nsltiu a4,s0,-8\nxor a1,s3,sp\naddi t1,zero,-100\nor t2,a2,s3\nxor a0,a2,a0\nor a6,s4,sp\nslt t2,s3,a6\nlw a7,840(s11)\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1006,
+      "kind": "diverge",
+      "detail": "a1: sim 0x00000000 ref 0x00000001, a6: sim 0x00000002 ref 0xfffff000, s3: sim 0x00000252 ref 0x00000253",
+      "source": "lui s11,65536\naddi a6,zero,2\naddi t0,zero,594\naddi s0,zero,2\naddi a2,zero,483\nadd a4,t0,a3\nadd t1,a3,a4\nauipc t4,0\njalr ra,t4,12\nlw t2,372(s11)\nsw a7,1840(s11)\nsub s2,s11,a0\nblt sp,zero,12\nsub a1,s11,t2\nsltiu a1,a0,-8\nauipc t4,0\njalr ra,t4,12\naddi t2,zero,2047\nlui a6,-4096\nsw t2,1604(s11)\nsltiu t2,a5,0\nsrl s3,a0,t0\nlui t2,2147479552\nxor s3,t0,a1\njal ra,8\nsltiu s1,a4,-1\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1007,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi t1,zero,7\naddi a7,zero,2\naddi s2,zero,-1583\naddi a4,zero,2047\naddi t1,s2,2\naddi t5,zero,1\nsw a3,236(s11)\nlw a4,1744(s11)\nadd a5,s11,a5\naddi t5,t5,-1\nbne t5,zero,-16\nlw s3,200(s11)\nsrl a3,t1,a7\nsw a0,1688(s11)\nauipc t4,0\njalr ra,t4,12\nor s3,a0,s4\nxor a5,a6,t0\nsltu a7,a1,sp\nsltu t1,a2,a0\nsltiu t1,sp,-100\nor a1,s11,t2\naddi t0,sp,7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1009,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a0,zero,-1\naddi t0,zero,2\naddi a2,zero,1\naddi t1,zero,2\nor a0,zero,s0\naddi a6,s1,-900\nlui t0,305418240\nbge a4,a4,12\nsrl a6,a5,a5\nand a3,a5,a1\nand a5,a5,t2\nlui s3,2147479552\nslt a3,s0,zero\nsll a7,sp,t0\nlui s3,-2147483648\naddi t5,zero,2\nxor a7,a2,a2\nsltu t2,s1,sp\nsw t1,2000(s11)\naddi t5,t5,-1\nbne t5,zero,-16\nauipc t4,0\njalr ra,t4,12\nsltiu t1,sp,-100\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1011,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294966701'\n",
+      "source": "lui s11,65536\naddi a6,zero,-595\naddi s1,zero,100\naddi t0,zero,2047\naddi a1,zero,-1\nsltiu s0,a6,1\nsltiu t0,s4,2047\nand a0,s0,a3\naddi t5,zero,3\nlw s4,532(s11)\naddi s1,s2,7\naddi t5,t5,-1\nbne t5,zero,-12\nor s2,t1,a0\nsll a6,s1,t1\nsltiu a1,a3,7\nslt a4,a0,s1\nsw s3,1236(s11)\nor t0,s4,s0\nbgeu t2,s1,8\nadd s2,a5,zero\nsll a5,a5,s3\nlui a0,-4096\nbne t1,s1,12\nsltiu a0,s2,1\nsltu a5,s0,s0\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1012,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi a5,zero,-2048\naddi t2,zero,-8\naddi s3,zero,52\naddi a1,zero,2047\nsltiu s2,t0,-100\naddi t6,zero,5\nlw a6,1980(s11)\naddi t6,t6,-1\nbne t6,zero,-8\nbltu a7,sp,8\nsw a4,1972(s11)\naddi a3,t2,2\nblt a1,a2,8\nlw a0,252(s11)\nbltu a2,zero,16\nsltiu a7,s0,870\naddi a6,t1,0\nslt s1,a2,t1\nlui a3,4096\naddi t6,zero,5\nlui a7,4096\nsrl a4,a5,a7\nsltu s4,a0,a4\naddi t6,t6,-1\nbne t6,zero,-16\njal ra,8\nand a4,s3,a2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1013,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi s4,zero,-2048\naddi a7,zero,100\naddi s1,zero,100\naddi a6,zero,7\nor a5,t2,a1\naddi a7,a6,613\naddi t5,zero,1\nsub s2,s0,a7\naddi t2,a4,7\naddi a4,zero,-100\naddi t5,t5,-1\nbne t5,zero,-16\naddi t5,zero,3\nor s4,s2,t2\nsltiu a0,a5,-1\naddi t5,t5,-1\nbne t5,zero,-12\nbne sp,s2,8\nand t2,a0,sp\nsw a1,1192(s11)\nsltiu s0,sp,0\nlw s2,896(s11)\nsrl t1,s0,a3\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1014,
+      "kind": "diverge",
+      "detail": "ra: sim 0x0000005c ref 0x00000064, t0: sim 0x0000fff9 ref 0x00010064, s0: sim 0x00000007 ref 0xffffff9c, s3: sim 0x00000007 ref 0x00000000",
+      "source": "lui s11,65536\naddi t0,zero,100\naddi s0,zero,-100\naddi s1,zero,7\naddi s4,zero,-2048\nslt s1,a2,zero\naddi t6,zero,5\naddi a0,a2,7\nsltiu a6,zero,1\naddi t6,t6,-1\nbne t6,zero,-12\nlw a2,720(s11)\nslt a2,t2,t2\nbge a7,s0,16\naddi s3,a1,7\nlw s1,1620(s11)\nsll s0,s3,t1\nxor t0,a0,zero\nsw s2,684(s11)\nsub t0,s11,s0\nlui s4,4096\nauipc t4,0\njalr ra,t4,12\naddi s1,s2,7\njal ra,8\nslt s4,a1,s11\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1015,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi s0,zero,7\naddi a7,zero,-2048\naddi s1,zero,-100\naddi a2,zero,-2048\naddi t5,zero,4\nsw a2,1352(s11)\nsltiu t1,a2,-2048\naddi t5,t5,-1\nbne t5,zero,-12\nsltu s3,sp,s11\nsltiu s1,s0,-1\naddi t5,zero,4\nslt a2,a2,t1\nlui s1,305418240\naddi t5,t5,-1\nbne t5,zero,-12\nor a7,s11,a5\nsw s2,132(s11)\nadd a5,sp,s1\nbge s2,t1,16\nsll a0,a3,a3\nxor a1,a1,t1\naddi a5,s3,0\njal ra,8\nsltu a4,s11,sp\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1017,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967041'\n",
+      "source": "lui s11,65536\naddi s4,zero,1\naddi s3,zero,7\naddi a5,zero,7\naddi a1,zero,0\nlui s2,-4096\nsltiu s3,t2,1\nsll s0,s1,s3\nsll s1,a7,a7\nor a4,t0,sp\naddi a7,a5,100\nsub s1,s4,a4\nsltiu t1,t1,-8\nslt a5,t0,s2\nsltiu s0,s1,-2048\nsrl a6,a5,sp\nsltiu s1,s3,-100\nbeq s0,s4,16\naddi a7,t2,-1\nlui s3,2147479552\naddi t1,s1,7\nlui s3,4096\nlw t1,1492(s11)\nxor a7,s0,s0\njal ra,8\nslt a1,t2,t2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1018,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2'\n",
+      "source": "lui s11,65536\naddi a7,zero,-1227\naddi a5,zero,-2048\naddi s4,zero,2\naddi a1,zero,2047\nbne s0,a7,12\nlui a0,65536\nsrl t1,s11,s2\nauipc t4,0\njalr ra,t4,12\nsltiu a6,s0,0\nlw s4,1984(s11)\nsw t1,608(s11)\naddi t5,zero,2\naddi t0,t2,-1\naddi t5,t5,-1\nbne t5,zero,-8\nsltu a2,a0,s4\nsltiu a4,s4,0\nsltiu s0,t1,2\nsltiu a3,s2,2\nauipc t4,0\njalr ra,t4,12\nsltiu s0,s1,7\njal ra,8\nsltiu t2,s0,7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1019,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967195'\n",
+      "source": "lui s11,65536\naddi t1,zero,-100\naddi a0,zero,7\naddi s0,zero,100\naddi s4,zero,7\nxor s2,t1,a0\nbge s4,t1,12\nlui a0,305418240\naddi a7,s2,-1\nsw a4,416(s11)\naddi t6,zero,4\nlui s0,-4096\nsltiu a0,s2,7\naddi s3,a1,2\naddi t6,t6,-1\nbne t6,zero,-16\nxor t0,s1,s0\nand s2,t1,t1\nsltu a6,a4,s3\naddi s3,s2,2\nsltiu s4,t0,7\nxor a3,a1,s11\nslt s0,t2,a3\naddi a6,s1,-8\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1020,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294963200'\n",
+      "source": "lui s11,65536\naddi s0,zero,-2048\naddi t0,zero,7\naddi a2,zero,-2048\naddi a7,zero,-8\nsltiu s2,t1,-1\naddi s2,s11,1\nlui t2,-4096\nsrl a2,a0,a4\nsw a5,752(s11)\nadd a5,a1,t2\nsrl a0,t2,a1\naddi t6,zero,4\nlui a4,2147479552\nsub a6,a5,a1\nsub a0,a5,a3\naddi t6,t6,-1\nbne t6,zero,-16\nsw a0,1432(s11)\nbne s3,s11,16\naddi s4,a3,2\nor t0,s1,s4\nsub s2,a2,a0\nblt s0,sp,8\nsltiu s4,a6,2\njal ra,8\nsrl a1,s11,s2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1021,
+      "kind": "diverge",
+      "detail": "t2: sim 0x00000000 ref 0x00000001",
+      "source": "lui s11,65536\naddi a0,zero,-2048\naddi a4,zero,1473\naddi s0,zero,-8\naddi s1,zero,1\nbne s2,s11,12\nadd a2,s4,a6\naddi a6,a6,-100\naddi t6,zero,1\nsw s0,1796(s11)\naddi t6,t6,-1\nbne t6,zero,-8\nxor a1,a0,s4\naddi t5,zero,4\nsltiu a5,t2,1\nslt t2,zero,s2\naddi t5,t5,-1\nbne t5,zero,-12\nsub a5,a7,zero\nlui a6,-4096\naddi s4,a1,2047\nadd s0,s3,sp\nsltiu t2,a2,-2048\nbgeu t1,a0,12\nlw a1,64(s11)\nxor t0,a1,a4\njal ra,8\nadd a3,t1,a2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1022,
+      "kind": "diverge",
+      "detail": "t1: sim 0x00000000 ref 0x00000001, s1: sim 0x00000000 ref 0x00000001, a1: sim 0x00000000 ref 0x00000001",
+      "source": "lui s11,65536\naddi s1,zero,100\naddi a1,zero,-8\naddi a4,zero,100\naddi a0,zero,7\nsrl a5,s0,s1\nlw t1,1860(s11)\naddi a5,a5,-100\nsltiu s0,t2,2\naddi a1,s2,1\nbgeu a6,s11,16\nsltiu a5,a6,2\nsltiu s1,zero,-8\nlw s0,868(s11)\nadd t2,s4,t0\nsltiu a1,t0,-1\nsltu a3,zero,a3\nauipc t4,0\njalr ra,t4,12\naddi a5,t1,0\nsltiu t1,a2,-1\nsw a0,1176(s11)\naddi t6,zero,5\nor a3,zero,s11\naddi a2,t0,-1765\nlui s2,-2147483648\naddi t6,t6,-1\nbne t6,zero,-16\njal ra,8\naddi s3,t0,-1\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1023,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi s4,zero,100\naddi a6,zero,0\naddi a2,zero,-8\naddi s2,zero,-8\nand a3,s3,s0\nsw a1,792(s11)\nor a7,a5,s4\nsub s3,sp,a4\nsltiu s3,s11,2\naddi t1,a2,100\naddi t6,zero,2\nand s2,a6,a5\naddi t6,t6,-1\nbne t6,zero,-8\nbgeu s3,a0,12\nlw s0,540(s11)\nxor a6,a1,t1\nbge sp,s3,12\nlw a6,1424(s11)\nsrl t1,s11,s2\nsub a6,t2,t1\nsltiu t1,a1,2047\nlui a0,2147479552\njal ra,8\naddi t1,a0,-100\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1025,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967295'\n",
+      "source": "lui s11,65536\naddi a1,zero,2\naddi t0,zero,100\naddi s3,zero,-100\naddi s0,zero,-1\nbeq s0,a5,16\naddi a4,s0,2047\nlw t1,1104(s11)\nsll a5,s2,a5\nbgeu a5,t1,16\nadd a7,a6,t0\nslt a6,a5,a4\nsltiu a2,a2,-2048\nauipc t4,0\njalr ra,t4,12\nand a1,a2,t0\nsll s2,s3,t1\naddi t6,zero,4\nsll a7,sp,a7\nsrl a6,s0,sp\naddi t6,t6,-1\nbne t6,zero,-12\naddi t5,zero,4\nsltu t0,s0,s2\nadd a0,a1,a2\naddi s0,a0,1\naddi t5,t5,-1\nbne t5,zero,-16\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1026,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2'\n",
+      "source": "lui s11,65536\naddi t0,zero,2\naddi a2,zero,-100\naddi s1,zero,2047\naddi a1,zero,1\nslt a3,a4,t0\naddi t6,zero,3\nor s1,a0,a1\nslt a7,a5,s2\nslt a7,a0,s4\naddi t6,t6,-1\nbne t6,zero,-16\nsltiu a4,zero,100\nsltiu t1,t0,-1\nsub t1,t1,zero\nblt a5,t1,16\nxor s0,s0,t1\nsll t1,a3,s3\naddi a2,a5,2\nslt t2,s3,s2\nbge t1,a4,16\nlw a6,1120(s11)\nsrl a4,a6,s3\nor a3,s1,a4\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1028,
+      "kind": "diverge",
+      "detail": "a0: sim 0x00000009 ref 0x00000000",
+      "source": "lui s11,65536\naddi s3,zero,2\naddi a4,zero,-8\naddi a1,zero,2\naddi a5,zero,0\nlui t2,65536\naddi t5,zero,5\nsub a5,t1,a0\naddi t5,t5,-1\nbne t5,zero,-8\nand s1,a4,s0\naddi a0,s3,7\naddi s2,s1,-1\nadd s3,s0,a6\nsrl a1,s0,a3\nlw t2,872(s11)\nlui s1,4096\nsll s2,s0,s2\nsw t1,472(s11)\nauipc t4,0\njalr ra,t4,12\nsw t2,596(s11)\nsub a0,t0,a5\nxor a5,s1,a3\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1030,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294966533'\n",
+      "source": "lui s11,65536\naddi t1,zero,-763\naddi a1,zero,-100\naddi a7,zero,1\naddi a4,zero,1628\nsll a0,t0,a4\nbge a4,s2,12\nxor a7,a2,t1\nlui a7,2147479552\nxor a7,a0,t1\nbge a2,a6,8\nor a0,t1,a5\naddi t6,zero,3\nlui a4,-2147483648\nsltiu s1,a7,-100\nslt t1,a4,t0\naddi t6,t6,-1\nbne t6,zero,-16\nlui a6,-4096\nbgeu s2,a6,16\nlui a3,-4096\nor a0,a6,a1\nlui s3,2147479552\nand t0,t0,s0\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1033,
+      "kind": "diverge",
+      "detail": "t0: sim 0x00000100 ref 0x00000101",
+      "source": "lui s11,65536\naddi a1,zero,-1489\naddi a6,zero,-1424\naddi s1,zero,0\naddi a2,zero,100\nlui a0,4096\nor a7,t2,s4\nsltiu a6,a4,-8\nsll s3,a4,t0\nadd t0,sp,a6\nblt a1,t1,12\nsw t1,1532(s11)\naddi a6,s11,7\nsw a5,740(s11)\nadd t1,a3,a3\nsll a6,s11,s2\nbeq a3,s1,8\nsltu a3,s1,a5\nsll a7,s1,t2\nslt a7,s11,s4\naddi t5,zero,2\nor a2,a2,s1\naddi a4,s11,-1717\naddi t5,t5,-1\nbne t5,zero,-12\njal ra,8\nsub s1,s4,t0\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1034,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2'\n",
+      "source": "lui s11,65536\naddi t1,zero,100\naddi a5,zero,2\naddi s4,zero,2\naddi s2,zero,-8\nsltu s3,a2,s4\nsub a2,a2,s0\nauipc t4,0\njalr ra,t4,12\nlw s3,1560(s11)\naddi t6,zero,1\nsltiu a2,a5,100\naddi t6,t6,-1\nbne t6,zero,-8\nbne a0,s11,16\naddi s2,s3,124\nsrl t0,a1,t0\nsltiu a1,a1,100\naddi t5,zero,1\nsltiu a4,t1,0\naddi t5,t5,-1\nbne t5,zero,-8\nsw t0,1804(s11)\nbne a4,a5,16\nsltu t1,s0,a4\nsrl a2,a4,a1\nlui s1,-2147483648\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1035,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '7'\n",
+      "source": "lui s11,65536\naddi s3,zero,0\naddi t2,zero,0\naddi s1,zero,7\naddi s4,zero,0\nxor a2,a0,a7\nauipc t4,0\njalr ra,t4,12\nadd s1,sp,a4\nsll t2,a5,s4\naddi t6,zero,3\nsll t1,t1,a3\naddi t6,t6,-1\nbne t6,zero,-8\nlui a3,305418240\nauipc t4,0\njalr ra,t4,12\nsw s1,4(s11)\nsltu a0,a0,a1\nsltu a2,s1,s3\naddi s2,a2,-2048\naddi t5,zero,3\nsll t0,a3,a6\nsub s3,s3,s0\naddi t5,t5,-1\nbne t5,zero,-12\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1036,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967295'\n",
+      "source": "lui s11,65536\naddi s2,zero,1\naddi a6,zero,1\naddi s3,zero,-100\naddi a5,zero,0\naddi a3,s4,-1\nbltu s1,t0,16\nsltu a6,a1,a3\nxor t0,t0,s0\nsltu a6,a5,sp\naddi t5,zero,1\nsw a0,328(s11)\nand t1,a2,a3\naddi t5,t5,-1\nbne t5,zero,-12\nadd a2,s1,a3\nsltiu a7,a1,0\nbeq a5,s1,12\naddi s0,a2,-100\naddi s4,sp,7\nlui t1,-2147483648\nslt s3,a6,a6\nsrl a2,s0,s3\nor a4,s1,a3\njal ra,8\naddi t2,s3,-8\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1037,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi t2,zero,0\naddi a2,zero,-8\naddi a5,zero,-2048\naddi s3,zero,-5\naddi s1,a4,2047\nsw t1,1568(s11)\nbeq a7,s2,12\naddi a0,a7,-1\naddi a2,s2,-100\nlw a4,388(s11)\nblt a7,t2,12\nsw a0,944(s11)\nsltiu a1,s4,-2048\nblt zero,t2,16\nsrl a3,t0,s4\nsw t0,1932(s11)\nsltiu a5,a5,7\nor a2,s1,s1\nblt s3,t0,12\naddi a1,a7,100\nsll a3,t1,t2\nbne s1,s3,16\naddi s1,a1,-1\nsub a4,s0,s0\nsll t1,s2,s1\njal ra,8\nand a6,a6,t2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1038,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967288'\n",
+      "source": "lui s11,65536\naddi s0,zero,-8\naddi t1,zero,0\naddi s1,zero,-100\naddi t2,zero,0\nlw t2,1088(s11)\nbeq s2,zero,16\nsw a6,2032(s11)\nor a5,t2,a0\naddi a0,a2,-100\nsub t0,a3,s4\nlw s1,1332(s11)\nbltu a2,t0,12\nand s3,a4,t1\nlw s2,520(s11)\nlui s2,65536\nxor a0,a7,s0\naddi t5,zero,3\naddi t2,s4,-2048\nsltu s4,zero,s0\nsub t1,s1,s2\naddi t5,t5,-1\nbne t5,zero,-16\nauipc t4,0\njalr ra,t4,12\nlui a7,-2147483648\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1039,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967295'\n",
+      "source": "lui s11,65536\naddi a0,zero,2\naddi s0,zero,1\naddi a5,zero,-1\naddi t1,zero,-1\nlw a4,104(s11)\nbgeu s0,s2,12\nlui s3,-2147483648\nslt a4,t1,a4\nsub a1,s0,zero\nsltu t1,a4,t2\nsltiu t0,a5,2047\nsltu a3,a5,s0\nsltiu a5,a6,100\nslt a3,a1,a3\nauipc t4,0\njalr ra,t4,12\naddi s2,s4,-100\naddi t6,zero,4\nsltu a4,zero,s3\nsltiu a7,s1,-1\nsltiu a2,t2,7\naddi t6,t6,-1\nbne t6,zero,-16\njal ra,8\naddi s0,t2,100\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1040,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967172'\n",
+      "source": "lui s11,65536\naddi a4,zero,-124\naddi t2,zero,7\naddi s4,zero,7\naddi a6,zero,7\nlui a7,2147479552\nblt t0,zero,8\nsub s2,a6,s3\nsltiu t1,a3,-100\nauipc t4,0\njalr ra,t4,12\nsltiu a3,t1,2047\nor a6,a6,a3\naddi s4,a6,100\naddi a0,a7,-1705\nbltu a7,a2,12\nsltiu s0,a2,7\nsltu a4,s4,a4\nslt a7,s11,sp\nsltiu a4,s3,100\naddi t6,zero,1\nsll a7,a2,a5\nsltiu a4,a3,2047\naddi t0,a6,-1\naddi t6,t6,-1\nbne t6,zero,-16\njal ra,8\nsrl a1,s3,s4\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1042,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967196'\n",
+      "source": "lui s11,65536\naddi a2,zero,7\naddi t2,zero,100\naddi a0,zero,-1\naddi t0,zero,-100\nsltiu a3,t0,-8\nor a1,a1,a1\nxor a7,sp,s0\nlw t0,1704(s11)\nbgeu a6,zero,16\naddi a1,t0,2\nslt a5,sp,a4\nsw a1,792(s11)\naddi t1,s4,2\nsltiu a3,a4,-2048\naddi t6,zero,5\nsltiu a2,a2,7\nslt s4,a1,t0\naddi t6,t6,-1\nbne t6,zero,-12\nsw t2,1368(s11)\nsltiu s4,zero,-1\nsltiu t1,s11,2\nlui a5,2147479552\njal ra,8\nslt a5,a3,a3\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1043,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a6,zero,0\naddi a0,zero,590\naddi a2,zero,-1\naddi s0,zero,-100\nbeq a7,s2,12\nlui a2,65536\nsltiu a4,s1,-8\nxor t1,t2,a1\nsub a3,s11,zero\nsltiu a3,a4,-8\nlw a2,772(s11)\nsltiu t1,sp,7\nauipc t4,0\njalr ra,t4,12\nlui s2,65536\naddi s1,a6,100\nor a3,zero,sp\nbltu a5,s0,12\nsltiu a2,a5,2047\nsw t0,1144(s11)\nblt a6,t1,16\nsrl a0,t1,t1\nsw a6,1596(s11)\nlui a6,4096\njal ra,8\nsltiu s1,s4,7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1044,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi a2,zero,-2048\naddi a0,zero,2\naddi s4,zero,-1\naddi a7,zero,-100\nxor t1,zero,a0\naddi a4,s3,-1\nslt a3,t1,a3\naddi a6,sp,-2048\nsltiu a2,s11,2\nlui t1,2147479552\nlui a3,2147479552\nsltiu a5,zero,100\nsub a4,s3,s3\nlui a4,2147479552\nauipc t4,0\njalr ra,t4,12\nlui a6,305418240\nsw s3,748(s11)\nxor a3,a0,a5\nand s0,a7,s1\nsw s0,192(s11)\nsltiu a4,t1,7\nsub t1,t1,s3\njal ra,8\nslt s0,a6,a7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1045,
+      "kind": "diverge",
+      "detail": "simulator did not halt but the reference did",
+      "source": "lui s11,65536\naddi t1,zero,-100\naddi a6,zero,1\naddi a5,zero,-1\naddi s2,zero,-100\nbne zero,s11,16\nsub a2,t0,s11\naddi a6,a2,1\nsltiu s0,a0,-2048\nbeq s1,t0,16\nlw a1,1388(s11)\nadd a4,a5,t2\nlw a5,0(s11)\nauipc t4,0\njalr ra,t4,12\naddi a3,a5,2047\naddi t6,zero,5\nsrl t2,s0,s0\naddi s0,a6,-1677\naddi t6,t6,-1\nbne t6,zero,-12\nand s1,a2,a3\nlui t2,65536\naddi t2,a3,-100\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1046,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967288'\n",
+      "source": "lui s11,65536\naddi s3,zero,-8\naddi a4,zero,2\naddi a7,zero,0\naddi a2,zero,1\nsrl a5,s11,a1\nslt s1,zero,sp\nauipc t4,0\njalr ra,t4,12\nsub s3,a5,s1\nand s0,s1,a7\nadd t1,a6,s3\nxor a3,zero,s3\nsll a2,s1,zero\nxor t0,a1,s4\naddi t5,zero,3\nsub a1,a1,s11\naddi a5,t2,-8\naddi t5,t5,-1\nbne t5,zero,-12\nlui t1,-4096\nsw s0,688(s11)\nlui a7,4096\naddi t5,zero,2\nslt a7,s2,zero\nsrl s4,t2,zero\nsltiu t0,a5,0\naddi t5,t5,-1\nbne t5,zero,-16\njal ra,8\nsltiu a1,a5,-1066\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1047,
+      "kind": "diverge",
+      "detail": "a2: sim 0x00000000 ref 0x00000001, a3: sim 0x00000000 ref 0xffffffff, a5: sim 0x00000000 ref 0x00000001",
+      "source": "lui s11,65536\naddi t2,zero,100\naddi s1,zero,-1\naddi a1,zero,2047\naddi s3,zero,-1\nbeq sp,t2,8\nsltiu s3,a3,-8\nbge sp,a3,8\nsltu s2,a5,a1\nsll a5,t0,sp\naddi t5,zero,6\nsll a5,a0,s2\nsw a3,1108(s11)\naddi t5,t5,-1\nbne t5,zero,-12\nslt a2,s1,s0\nsltu s0,s3,t1\naddi a6,a1,-8\nadd s3,a4,sp\nsub a3,a0,a2\nand t1,t2,s3\nslt a1,a2,s0\nbltu a3,s2,8\nsltiu a5,s4,-2048\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1049,
+      "kind": "diverge",
+      "detail": "t0: sim 0x00000000 ref 0x00000001, a5: sim 0xfffff800 ref 0xfffff801",
+      "source": "lui s11,65536\naddi s3,zero,-8\naddi a7,zero,-2048\naddi t0,zero,0\naddi s0,zero,1\nslt a1,t0,a6\nlw t1,1616(s11)\naddi t5,zero,5\nxor a5,a6,s2\nsltiu t0,s0,-1\naddi t5,t5,-1\nbne t5,zero,-12\nbge a4,zero,16\nadd a3,a0,zero\nslt a6,a0,a3\nxor t2,t0,a2\naddi a2,s4,-8\naddi a0,sp,0\nsrl s4,zero,s11\nxor a5,t0,a7\nbeq a7,a2,12\naddi a1,s3,-8\naddi t1,s3,-8\nadd s4,t2,zero\njal ra,8\nsrl a1,zero,s4\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1050,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967288'\n",
+      "source": "lui s11,65536\naddi a5,zero,-8\naddi s3,zero,0\naddi a4,zero,100\naddi a1,zero,100\nlw t2,1548(s11)\nsltiu s2,s3,-8\nbne a5,sp,12\nxor s4,a0,a3\nxor a0,s3,s11\nauipc t4,0\njalr ra,t4,12\nand a6,a4,a4\nauipc t4,0\njalr ra,t4,12\nxor a7,s2,sp\nlw s3,1052(s11)\nbeq t2,s4,12\naddi s4,a1,-411\nadd a7,a1,a3\nxor a1,a0,t1\naddi t1,t0,100\nsltiu a1,a5,0\nsll a2,a1,t2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1051,
+      "kind": "diverge",
+      "detail": "a0: sim 0x00000002 ref 0x00000000, a2: sim 0x00000001 ref 0x00000000, a7: sim 0x00000002 ref 0x00000000",
+      "source": "lui s11,65536\naddi t1,zero,1814\naddi a5,zero,7\naddi s4,zero,0\naddi s1,zero,-100\nsw a7,1888(s11)\nsltiu s2,zero,7\nsltiu a2,t1,7\naddi a3,s3,-1\nsrl a0,a0,a2\nand s2,t0,a6\nlui t2,305418240\naddi t6,zero,2\nsll a7,a2,a2\nsub t1,s4,sp\nor a0,a1,a7\naddi t6,t6,-1\nbne t6,zero,-16\nbgeu s2,a4,8\nsw a3,496(s11)\nslt t1,s11,s2\nsw t1,344(s11)\nauipc t4,0\njalr ra,t4,12\nsltiu a3,t1,2047\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1052,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi s1,zero,-1\naddi a5,zero,-100\naddi a7,zero,7\naddi t1,zero,-100\nsrl a4,zero,a4\nsltu a6,a0,t2\nsltu t0,s4,a2\nbge a4,a1,16\nsw a4,764(s11)\nxor s3,s2,t2\nlw t0,836(s11)\naddi a1,a7,-2048\nand t2,a4,a1\nadd s2,a4,a0\nsltiu s4,t2,0\nsltiu a3,s2,-8\nauipc t4,0\njalr ra,t4,12\nsw s2,440(s11)\nlui a7,2147479552\nsltiu s4,sp,-8\nxor a1,a1,a4\nsltiu a2,t2,-2048\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1053,
+      "kind": "diverge",
+      "detail": "a7: sim 0x00000000 ref 0x00010000",
+      "source": "lui s11,65536\naddi a6,zero,906\naddi a0,zero,-8\naddi a5,zero,-2048\naddi s2,zero,1\nsw a1,100(s11)\nsrl a6,t1,a0\nbge a5,a3,16\naddi a6,s11,2047\nsltu a2,s0,s0\naddi s1,a0,7\naddi t5,zero,3\nsw a3,1040(s11)\nadd a6,s2,a2\naddi t5,t5,-1\nbne t5,zero,-12\nauipc t4,0\njalr ra,t4,12\nsltiu t2,a4,1\nlui a7,65536\nlui s1,65536\nsll t1,s4,s2\nbltu a2,a6,12\nxor s4,zero,a4\nsltiu a3,a6,0\njal ra,8\nlui a6,4096\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1054,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967196'\n",
+      "source": "lui s11,65536\naddi s0,zero,-1\naddi a3,zero,-100\naddi s2,zero,-2048\naddi t0,zero,2\nsltiu a7,a7,1\naddi a3,s4,-100\nlw a5,1816(s11)\naddi t2,s1,1\nlui a5,-2147483648\nauipc t4,0\njalr ra,t4,12\naddi a3,t1,0\nbltu t2,a0,16\nsw a6,848(s11)\nsltiu a1,a3,-2048\nadd s1,s2,s1\nsub a1,a1,a2\nlui a5,4096\nlui s2,4096\nsub a6,s11,a7\nbeq sp,a7,12\nxor a5,a1,s0\nadd t2,a3,s0\njal ra,8\nand a7,s11,s11\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1055,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi t2,zero,100\naddi t1,zero,100\naddi a0,zero,1\naddi a4,zero,295\naddi a0,s2,-8\naddi t6,zero,3\nlw s2,464(s11)\nsltiu t2,a2,-100\naddi t6,t6,-1\nbne t6,zero,-12\nblt s11,a6,16\nsltu a7,zero,sp\nsub a2,s0,sp\nlw s2,64(s11)\nauipc t4,0\njalr ra,t4,12\naddi a4,t2,0\nand t2,a2,sp\nsrl s2,a1,t1\naddi t6,zero,1\nslt t2,a5,a4\nsll a2,s2,s4\naddi t6,t6,-1\nbne t6,zero,-12\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1056,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2147479552'\n",
+      "source": "lui s11,65536\naddi s0,zero,2\naddi t2,zero,-100\naddi s2,zero,-2048\naddi a7,zero,1\nauipc t4,0\njalr ra,t4,12\naddi s2,s3,2047\nadd a4,t0,a2\nlui s1,2147479552\nsll t0,a1,a5\naddi t5,zero,2\nsll a2,a5,t0\nlui t1,2147479552\naddi t5,t5,-1\nbne t5,zero,-12\nsltiu a7,t1,-1411\nor s0,t1,sp\nsltiu s4,a4,-100\naddi t6,zero,3\nand t1,a5,s4\nor t0,a5,s0\naddi t6,t6,-1\nbne t6,zero,-12\njal ra,8\nadd a5,a1,t1\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1057,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a0,zero,2\naddi a1,zero,7\naddi s4,zero,-8\naddi a7,zero,1\naddi t6,zero,5\nslt t1,s0,t0\nsub s0,t1,a2\nsltiu s1,t0,-100\naddi t6,t6,-1\nbne t6,zero,-16\nsltiu s0,sp,2047\nblt a3,s1,16\nadd a1,t2,t0\nlui a0,2147479552\nsll a4,a6,sp\nor a5,t1,a2\nsltu a0,s2,t0\naddi t6,zero,6\nadd a5,a5,a1\nxor s0,zero,t0\nand t0,zero,a5\naddi t6,t6,-1\nbne t6,zero,-16\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1058,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2047'\n",
+      "source": "lui s11,65536\naddi a4,zero,2047\naddi s4,zero,-1\naddi t2,zero,0\naddi s0,zero,1\nlw t2,264(s11)\nsltiu a1,a0,-100\nbge t0,sp,12\nsltiu a6,a4,-1\nsltu a3,a0,s11\nlui s1,-4096\naddi t6,zero,1\naddi a5,s4,-100\nsltu a7,a1,t0\naddi t6,t6,-1\nbne t6,zero,-12\nsltiu a4,s0,2\nbge a5,s2,12\naddi t0,a6,2\nor a1,a3,a1\nsltu s0,a1,a6\naddi t6,zero,5\naddi s4,t1,-1\naddi t6,t6,-1\nbne t6,zero,-8\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1059,
+      "kind": "diverge",
+      "detail": "ra: sim 0x00000060 ref 0x00000068, t0: sim 0x00000000 ref 0x00000001, a1: sim 0x00000107 ref 0x00000000, a2: sim 0x00000000 ref 0xfffff800",
+      "source": "lui s11,65536\naddi t1,zero,-2048\naddi s4,zero,100\naddi a4,zero,1\naddi s3,zero,2047\nauipc t4,0\njalr ra,t4,12\nsw a2,784(s11)\naddi a2,t2,-2048\nor a3,s3,t2\naddi t6,zero,1\nsll t0,a7,a7\nsltiu a5,a0,2047\naddi t6,t6,-1\nbne t6,zero,-12\nsw a3,1136(s11)\nsltu t0,t0,a2\naddi t5,zero,1\nlw s2,160(s11)\nadd a0,a7,s0\naddi t5,t5,-1\nbne t5,zero,-12\nauipc t4,0\njalr ra,t4,12\nadd a5,a1,a6\njal ra,8\naddi a1,sp,7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1060,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a2,zero,-1\naddi s0,zero,-2048\naddi t0,zero,7\naddi s2,zero,-8\nbeq a5,s1,16\naddi s0,a2,-100\nlw a4,1540(s11)\nlw a4,1524(s11)\nlui t2,-4096\nxor s4,s4,s1\nsltiu s1,a1,-2048\naddi t5,zero,6\nor t1,s0,s1\naddi t5,t5,-1\nbne t5,zero,-8\nbgeu s2,a6,12\nand s2,t2,s3\nslt s1,a1,s3\nxor a7,s4,a3\nxor t1,s11,a0\nsltiu s0,sp,1015\nsltiu t1,s11,-100\nlui s3,-2147483648\njal ra,8\nxor s2,a4,a4\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1061,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi a5,zero,2047\naddi a0,zero,0\naddi t2,zero,-1\naddi a1,zero,-8\naddi t6,zero,3\nlw a5,1124(s11)\nlui a6,-4096\nsw t2,288(s11)\naddi t6,t6,-1\nbne t6,zero,-16\nadd a3,zero,a2\naddi t5,zero,6\nlui s3,4096\nxor a5,zero,s2\naddi t5,t5,-1\nbne t5,zero,-12\naddi a4,s1,-2048\nsltiu s0,s11,-100\nsw s3,832(s11)\nor s1,a6,s1\nsll t2,t2,a6\naddi s4,a7,2047\nlui a4,305418240\njal ra,8\naddi t0,zero,-8\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1062,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965852'\n",
+      "source": "lui s11,65536\naddi s0,zero,-1444\naddi s4,zero,2047\naddi a0,zero,1\naddi a3,zero,2047\nxor a6,s2,sp\nsub t0,a5,t2\nauipc t4,0\njalr ra,t4,12\nsll s3,a3,a3\naddi t5,zero,2\nsltu s4,a4,s0\naddi a1,s1,-658\naddi t5,t5,-1\nbne t5,zero,-12\nlui a3,305418240\nblt a4,t0,12\nslt s2,a7,a2\naddi s2,a1,-2048\nsll a3,s1,a7\nlw a7,1924(s11)\nlui a4,65536\naddi s0,a3,-8\nauipc t4,0\njalr ra,t4,12\nxor a6,a5,t2\njal ra,8\nsltiu a1,a2,-2048\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1064,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2147483648'\n",
+      "source": "lui s11,65536\naddi a2,zero,-100\naddi a4,zero,-1\naddi t0,zero,1\naddi a0,zero,-8\nsrl t1,a1,sp\nbgeu a5,s3,12\naddi s2,a6,1\nsw s1,464(s11)\naddi s3,sp,2\nsltiu a4,s4,-2048\naddi t6,zero,4\nsw t2,1956(s11)\nadd t1,s2,t0\naddi t6,t6,-1\nbne t6,zero,-12\nbge s11,a3,16\nxor s1,sp,s2\naddi a1,a4,2047\nsltiu s1,a6,-100\nslt s2,sp,a5\nlui a4,-2147483648\nor t2,s2,a4\nsltiu a0,t2,1\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1065,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi s0,zero,-2048\naddi s2,zero,-1\naddi s3,zero,-2048\naddi a0,zero,-100\nsltu s1,s3,a2\nand a3,t1,s11\nlui a5,-4096\nauipc t4,0\njalr ra,t4,12\nsltiu s1,s4,1\nsub a5,t0,t1\nsw a5,1324(s11)\nblt t1,a2,16\naddi s3,a6,-2048\nor a0,a4,s11\naddi a7,s0,100\nbltu s2,a0,12\nor s1,t2,a4\nlui a0,-2147483648\nsll t1,s1,a3\nsltiu a2,s0,-2048\nbltu a5,a6,8\naddi t2,a0,0\njal ra,8\nor t2,s3,a7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1068,
+      "kind": "diverge",
+      "detail": "t2: sim 0x00000001 ref 0xffffff9c, s2: sim 0x00000000 ref 0x00000001",
+      "source": "lui s11,65536\naddi s2,zero,-100\naddi a2,zero,2\naddi s0,zero,124\naddi a1,zero,7\nand a0,a4,s0\naddi t6,zero,6\nlui s4,65536\nsltiu t2,s3,2\nsltiu a3,a3,2\naddi t6,t6,-1\nbne t6,zero,-16\nsltiu a3,a7,2047\naddi a5,t2,2\naddi a2,t1,-100\naddi a3,a6,0\nsll s4,t1,s11\nauipc t4,0\njalr ra,t4,12\nsub t2,a7,s4\nsll t2,a2,s3\nsltiu s2,a4,-1\naddi a0,s3,-8\nslt a1,sp,a1\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1069,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2'\n",
+      "source": "lui s11,65536\naddi a6,zero,1\naddi s4,zero,2047\naddi t2,zero,-100\naddi a4,zero,2\naddi a2,a7,-1\nlui s1,2147479552\nadd s0,t2,s0\nlui a5,305418240\nsltu a6,a4,a0\nbeq t0,sp,16\nadd t0,a6,a5\nadd s4,s11,a7\nsw s3,1852(s11)\nbeq s0,t0,8\nsw a6,876(s11)\naddi a7,s0,-1\nadd s2,t0,a7\nor a0,a6,zero\nsw a7,500(s11)\naddi t5,zero,1\nsltu a3,t0,a0\naddi t5,t5,-1\nbne t5,zero,-8\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1070,
+      "kind": "diverge",
+      "detail": "simulator did not halt but the reference did",
+      "source": "lui s11,65536\naddi a6,zero,-8\naddi s4,zero,2\naddi t1,zero,1\naddi a2,zero,2047\naddi s0,s4,1\nauipc t4,0\njalr ra,t4,12\nlui a7,4096\naddi a5,t1,-100\nauipc t4,0\njalr ra,t4,12\nsub s0,s1,s3\naddi t6,zero,6\naddi s0,sp,7\naddi t6,t6,-1\nbne t6,zero,-8\nadd t0,a7,s2\nbgeu s4,a6,12\nsrl a1,t2,a6\naddi t2,a5,100\naddi s4,s3,-2048\nsw a1,1596(s11)\nbne s4,s1,12\nlui t1,305418240\nlui a4,4096\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1071,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967196'\n",
+      "source": "lui s11,65536\naddi s0,zero,-2048\naddi a2,zero,-100\naddi a7,zero,2\naddi s3,zero,2047\nlui a3,-2147483648\naddi t0,a5,-2048\nlw a0,1356(s11)\nslt s1,a1,s1\naddi t5,zero,1\nor a6,a5,s3\naddi t5,t5,-1\nbne t5,zero,-8\naddi a5,t0,2\nbne s4,t0,8\naddi a0,s11,1\nbge s1,a0,8\nlui s1,-2147483648\nsltiu a4,a2,-2048\nsltiu a2,s0,-100\nsltu s3,sp,sp\nblt a5,a0,8\naddi a0,a0,-2048\nand a2,s4,s3\njal ra,8\nlui a6,2147479552\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1072,
+      "kind": "diverge",
+      "detail": "a2: sim 0x00000000 ref 0x00000001, a6: sim 0x00000000 ref 0x00000001, s4: sim 0x00000000 ref 0x00000001",
+      "source": "lui s11,65536\naddi s4,zero,7\naddi a1,zero,1\naddi t0,zero,-1\naddi a4,zero,100\nsltiu s3,s1,7\naddi t5,zero,4\nor s3,s11,s4\nlw a2,808(s11)\naddi t5,t5,-1\nbne t5,zero,-12\nlui t2,65536\nlui a0,305418240\nslt s3,s11,a3\nblt a0,s0,8\nsltiu a6,s2,-8\nsw t2,292(s11)\nor a0,sp,a7\nsltiu a2,s2,-100\nsrl t1,a1,s0\nsltiu s4,s1,-1021\nsub t1,a4,t0\nsrl t1,a7,sp\nauipc t4,0\njalr ra,t4,12\nsw a2,444(s11)\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1074,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2147483648'\n",
+      "source": "lui s11,65536\naddi a7,zero,1\naddi a0,zero,1850\naddi t2,zero,-100\naddi t0,zero,-1\nsll a7,s2,a6\nlui s0,-2147483648\naddi t5,zero,4\naddi a5,s3,1\nsltiu a5,s4,-1\nsltu s1,s0,a4\naddi t5,t5,-1\nbne t5,zero,-16\nsltu t0,a7,s3\nsltiu s4,s0,0\nor a4,s0,a4\naddi a1,s2,-2048\nsub a4,a4,s2\nsll a2,t2,a3\nxor t1,a6,a6\naddi s4,a4,7\naddi t6,zero,3\nadd t1,a6,a6\naddi t6,t6,-1\nbne t6,zero,-8\njal ra,8\nsrl t1,t1,a6\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1075,
+      "kind": "diverge",
+      "detail": "t0: sim 0xfffffff8 ref 0x00000000",
+      "source": "lui s11,65536\naddi s2,zero,2047\naddi t0,zero,-8\naddi s0,zero,1\naddi s3,zero,-100\nsw a3,1944(s11)\nsltiu a5,a3,7\nbge s11,zero,8\nsltiu s1,a1,1\nslt t1,a4,a6\naddi t1,a2,-100\nsltu t1,s4,a6\nauipc t4,0\njalr ra,t4,12\nsw a1,1868(s11)\nslt t0,s0,a7\naddi t2,s2,2\nsrl s4,s3,a7\nsw a0,124(s11)\nlui s0,-2147483648\nlui a1,4096\nlui a1,4096\nor s1,a0,sp\nsub s1,a1,s2\njal ra,8\nsll a2,sp,a0\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1077,
+      "kind": "diverge",
+      "detail": "t0: sim 0x00000000 ref 0x00001000, a4: sim 0x00001000 ref 0x00001001, a6: sim 0x00000000 ref 0x00000001, s2: sim 0xffffff9c ref 0x00000000",
+      "source": "lui s11,65536\naddi t1,zero,2\naddi s0,zero,100\naddi a0,zero,2\naddi s2,zero,-100\nand a6,zero,a5\nblt s3,a4,12\nlui a3,4096\nsw a6,492(s11)\naddi t5,zero,6\naddi a1,a2,35\nsltiu s3,t0,-8\naddi t5,t5,-1\nbne t5,zero,-12\nxor a4,a3,s3\nauipc t4,0\njalr ra,t4,12\nadd s2,a1,a5\nlui t0,4096\nauipc t4,0\njalr ra,t4,12\nsltiu t2,a0,-2048\nsrl s2,t2,a2\nslt a6,t2,t0\njal ra,8\nsltiu a4,zero,-1\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1078,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi s0,zero,0\naddi t2,zero,-100\naddi a2,zero,100\naddi a1,zero,2\nsltu a0,s0,s2\nxor t1,t2,a6\naddi t5,zero,1\nxor a3,a7,s1\naddi t5,t5,-1\nbne t5,zero,-8\nbne s11,a3,16\nlui t1,-2147483648\nxor s0,a7,a5\nslt s0,s2,a3\nbne a6,s4,8\nsltiu a1,sp,0\nor s2,t1,t1\nsltiu a6,a2,-1\nsw a2,1776(s11)\nbge s2,a2,8\nsub s4,zero,a7\naddi t5,zero,1\nadd t2,s1,a4\naddi t5,t5,-1\nbne t5,zero,-8\njal ra,8\naddi s1,a3,2047\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1079,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967196'\n",
+      "source": "lui s11,65536\naddi s4,zero,-100\naddi t0,zero,-8\naddi a6,zero,-100\naddi t2,zero,-2048\nsub t0,t2,t2\nsub a4,s11,a1\nand a1,s2,s1\naddi t6,zero,4\nsltu t0,a2,a2\naddi t6,t6,-1\nbne t6,zero,-8\nlw a4,1424(s11)\nsltu s3,t1,s4\nauipc t4,0\njalr ra,t4,12\naddi s4,a7,0\nbgeu a5,a1,12\naddi s1,zero,318\nsw s3,1096(s11)\nsw s1,1692(s11)\nlw s4,1032(s11)\nsltiu a4,a2,1\nsw s1,1216(s11)\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1080,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi s4,zero,-1\naddi a7,zero,2\naddi a3,zero,-8\naddi s1,zero,-8\nlw a5,1004(s11)\nsltiu s2,sp,0\naddi t2,a1,2047\nor a7,a4,s4\nsltu t0,s1,s3\naddi t6,zero,1\nand a1,zero,s4\naddi t6,t6,-1\nbne t6,zero,-8\nlui s3,305418240\nslt a4,a4,zero\nauipc t4,0\njalr ra,t4,12\naddi a2,s11,2\nadd s0,s2,s2\nsll s1,t1,a2\nadd a7,a0,a2\nlw t0,200(s11)\nsltiu s4,s3,-1\njal ra,8\nsltiu a3,a6,-2048\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1081,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi s4,zero,-2048\naddi a7,zero,-100\naddi s1,zero,-8\naddi a3,zero,-1\nsw a2,1752(s11)\nsll a7,sp,a2\nsltu t1,a5,s0\nlw a3,1128(s11)\nsltu t0,a1,s11\nsub a6,zero,s1\naddi a7,s1,0\nbeq s1,t1,8\nand s0,t2,s4\naddi t5,zero,6\nsll a2,a6,a1\naddi t5,t5,-1\nbne t5,zero,-8\nauipc t4,0\njalr ra,t4,12\naddi t1,a3,1\nsltiu a4,s4,2047\nsll s1,s2,a5\nlui t2,4096\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1082,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a1,zero,-100\naddi s2,zero,7\naddi s3,zero,1\naddi a3,zero,-1\naddi t5,zero,4\naddi s3,a3,1\nsll a3,a6,a3\nlui a1,4096\naddi t5,t5,-1\nbne t5,zero,-16\nadd a2,a7,s0\nsltu s3,zero,a5\nand a6,a3,a1\naddi a6,s2,-1\nslt a7,a7,t0\nauipc t4,0\njalr ra,t4,12\nxor s3,a1,a2\nsrl a6,zero,a3\naddi t5,zero,5\nsltu a5,sp,s11\nand a7,t2,a7\naddi t5,t5,-1\nbne t5,zero,-12\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1084,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi t1,zero,2\naddi a6,zero,1\naddi a1,zero,7\naddi s2,zero,-8\nlw t1,1156(s11)\nbge t2,s3,12\nsltu s1,a6,s1\nslt s0,t2,s2\naddi t5,zero,5\nsltiu a1,s4,0\naddi a2,a1,7\nsltiu a2,a6,2047\naddi t5,t5,-1\nbne t5,zero,-16\nbge zero,a7,8\nsub a1,s4,t2\nxor s2,s1,a5\nsltiu s0,t2,-1124\naddi s4,s4,1\naddi t6,zero,3\nsltiu s2,a5,-100\nsltu t1,sp,s2\naddi t6,t6,-1\nbne t6,zero,-12\njal ra,8\naddi a7,s0,299\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1085,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a4,zero,-1\naddi s4,zero,1\naddi t1,zero,0\naddi s2,zero,100\naddi s0,a2,2\nbgeu a4,s11,12\nsw t2,256(s11)\nlui a0,-4096\naddi t5,zero,1\nslt s1,s2,sp\nsrl t0,zero,s11\nlw t0,428(s11)\naddi t5,t5,-1\nbne t5,zero,-16\nsltiu a5,a5,1\nsll t0,s11,a2\nor a7,t2,a1\nsltiu a7,sp,1\nbne zero,s3,16\naddi a0,s4,1\nsll s2,sp,a3\nsrl s0,t0,a7\nlui a2,2147479552\njal ra,8\nsub a7,a1,t0\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1086,
+      "kind": "diverge",
+      "detail": "s3: sim 0x00000000 ref 0x00001000",
+      "source": "lui s11,65536\naddi a7,zero,-1\naddi a0,zero,-2048\naddi s4,zero,7\naddi a6,zero,2047\nbge a2,a6,16\nsrl a1,s2,s3\naddi s3,a0,-100\nsub a2,a3,t0\nxor t1,a3,sp\naddi t6,zero,4\nand s3,s2,t1\naddi t6,t6,-1\nbne t6,zero,-8\nlui s1,4096\naddi t5,zero,4\naddi a5,s2,-100\naddi t5,t5,-1\nbne t5,zero,-8\nauipc t4,0\njalr ra,t4,12\nslt a1,a3,a1\nxor s3,a1,s1\naddi t6,zero,2\naddi s2,a0,2\naddi a3,a5,-1\naddi t6,t6,-1\nbne t6,zero,-12\njal ra,8\nsrl t0,s11,a7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1087,
+      "kind": "diverge",
+      "detail": "t2: sim 0x00000000 ref 0x00000001, s1: sim 0x00000000 ref 0x00000001, s2: sim 0x00000000 ref 0x00000001",
+      "source": "lui s11,65536\naddi a1,zero,7\naddi a7,zero,2\naddi s2,zero,2\naddi s3,zero,-2048\nsll a1,a0,s2\nor a3,a2,a1\nsltiu s2,a5,-1\naddi t5,zero,1\nadd a2,zero,s4\naddi t5,t5,-1\nbne t5,zero,-8\nor t0,a1,s11\nlw a2,1864(s11)\nxor a3,a2,a4\nslt s4,s2,a6\nsltiu t2,a4,100\nsltiu s1,zero,-8\nsltiu a5,t2,7\nlui a1,2147479552\nsw a0,756(s11)\naddi t1,a0,-918\nlui s0,2147479552\naddi t6,zero,2\nadd a4,t1,s11\nsll t2,s1,a6\naddi t6,t6,-1\nbne t6,zero,-12\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1088,
+      "kind": "diverge",
+      "detail": "a2: sim 0x00000000 ref 0x00000001, a4: sim 0x00000000 ref 0x00000001; 1 memory words differ",
+      "source": "lui s11,65536\naddi s4,zero,-8\naddi a0,zero,22\naddi a1,zero,-8\naddi a7,zero,1\naddi t0,a3,-100\nor s4,s4,zero\naddi t5,zero,6\nsw a4,1160(s11)\naddi t5,t5,-1\nbne t5,zero,-8\nauipc t4,0\njalr ra,t4,12\nadd s1,t1,a5\nsltiu a4,a5,497\nxor s0,s1,t0\nsltiu s1,t2,7\nauipc t4,0\njalr ra,t4,12\nsltiu a3,a2,0\nsltiu a2,a0,100\nblt a6,sp,8\nsrl s1,s2,a1\nbge s4,t2,8\nsw t0,1568(s11)\njal ra,8\nlui a3,-2147483648\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1089,
+      "kind": "diverge",
+      "detail": "t0: sim 0x00000001 ref 0x00000000, a5: sim 0x00000000 ref 0xffffff9c",
+      "source": "lui s11,65536\naddi a5,zero,-100\naddi a2,zero,-1\naddi a3,zero,1\naddi a4,zero,0\naddi t5,zero,5\naddi t1,s0,0\naddi t5,t5,-1\nbne t5,zero,-8\naddi t5,zero,6\naddi a2,s4,0\nslt s2,zero,zero\naddi t5,t5,-1\nbne t5,zero,-12\nand t1,s0,t1\nsw a5,752(s11)\nlui t1,2147479552\nslt t0,t1,a5\nauipc t4,0\njalr ra,t4,12\nsll a0,t0,s0\nbge a2,a7,12\nsltiu a7,s0,-1462\nslt a5,s3,s2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1090,
+      "kind": "diverge",
+      "detail": "t0: sim 0x00000001 ref 0x00000000",
+      "source": "lui s11,65536\naddi s3,zero,1\naddi t2,zero,-100\naddi a1,zero,-2048\naddi a0,zero,7\nsub s3,sp,zero\naddi t6,zero,6\nsw a0,1408(s11)\naddi t6,t6,-1\nbne t6,zero,-8\naddi a4,s11,1\nsltiu a4,s4,1610\naddi t5,zero,3\nand s4,s2,t1\nor s0,zero,a6\nsltiu a7,s2,1\naddi t5,t5,-1\nbne t5,zero,-16\nlw a2,1100(s11)\naddi t6,zero,5\nsltiu t0,a7,1\nlui t2,2147479552\nlw a5,1952(s11)\naddi t6,t6,-1\nbne t6,zero,-16\njal ra,8\naddi a6,s3,0\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1095,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '256'\n",
+      "source": "lui s11,65536\naddi a1,zero,-2048\naddi s0,zero,-2048\naddi s2,zero,2047\naddi t1,zero,-2048\nsw a3,1804(s11)\nslt s0,a1,a2\nor s4,a6,a5\nsub a3,a7,s4\nlui a3,-4096\nsltiu a0,sp,-1\nbeq a0,a1,12\naddi s4,s4,2047\nand s0,t2,s11\nsub a1,a2,a4\nsub s2,t0,a1\nxor s4,a3,a7\nor s3,a2,s4\nbltu a7,a3,16\nsltiu a1,s0,-100\nlui a6,-4096\naddi a7,s0,-8\nbgeu t0,t1,16\nsw a4,1852(s11)\nsltu a4,t1,a0\naddi a4,s0,100\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1096,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2047'\n",
+      "source": "lui s11,65536\naddi s2,zero,2047\naddi s3,zero,7\naddi t1,zero,0\naddi a1,zero,2047\naddi s0,t2,2\nsub t0,t1,a3\nsltiu s0,s4,-100\nbne a4,a0,12\nsltiu s1,s4,-100\nsw s0,1644(s11)\nlw t1,1120(s11)\nslt a2,a2,a5\nbgeu sp,a7,12\nlw a0,632(s11)\nsub a6,t0,a2\nsltiu s4,a1,100\nlui s0,-4096\naddi a7,sp,7\nlui t2,-4096\nsub a5,s4,a1\nsltiu s1,t2,0\nbeq sp,a7,12\nsll a2,s11,t0\naddi s4,t2,100\njal ra,8\nsltu a6,a0,zero\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1097,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4096'\n",
+      "source": "lui s11,65536\naddi s0,zero,2047\naddi t0,zero,2047\naddi a7,zero,-100\naddi a1,zero,100\nsll s0,a5,s0\naddi a7,a2,-1302\nlui a5,4096\nsll a7,a1,s0\nbeq s2,sp,16\nsrl a3,s0,a6\nor t2,s3,s1\nsltiu t2,a5,-100\nsltu a4,sp,a3\nslt a3,t1,t0\nbgeu a6,s1,12\nsltiu t0,s11,-8\nsltiu a7,s3,-8\nbne a4,a6,8\nlui s4,305418240\naddi s1,a0,-803\naddi t6,zero,2\nor s4,s0,sp\nlw a4,1068(s11)\naddi t6,t6,-1\nbne t6,zero,-12\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1099,
+      "kind": "diverge",
+      "detail": "a4: sim 0x00000001 ref 0x00000000",
+      "source": "lui s11,65536\naddi a7,zero,-100\naddi s0,zero,1\naddi s3,zero,2047\naddi a5,zero,7\nlui a4,2147479552\naddi a3,a0,2\nsll a5,s0,zero\nsw t0,1164(s11)\nbeq a5,zero,8\nadd s2,s1,a5\nauipc t4,0\njalr ra,t4,12\nxor s4,s0,t1\nsltiu a0,a4,0\nsw a7,320(s11)\nbeq zero,t2,8\nsltiu a6,a6,7\nsltiu a4,a5,1\nauipc t4,0\njalr ra,t4,12\nlw t0,1052(s11)\nxor a5,t0,s0\nand s3,a0,a4\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1100,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi t0,zero,0\naddi a6,zero,-1\naddi s0,zero,2\naddi a7,zero,2047\nsw t1,1652(s11)\nadd a6,a7,a4\naddi t6,zero,2\nor a4,zero,zero\nsltiu a1,s11,2047\naddi t6,t6,-1\nbne t6,zero,-12\nblt a3,t1,8\nsub s4,a4,a3\nsrl a0,a6,a6\nauipc t4,0\njalr ra,t4,12\naddi a1,s1,1\naddi t6,zero,5\naddi s0,s0,-2048\nsltiu a5,s1,-838\naddi t6,t6,-1\nbne t6,zero,-12\nadd a5,s3,s4\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1101,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967295'\n",
+      "source": "lui s11,65536\naddi a6,zero,-1\naddi s2,zero,-1\naddi a1,zero,-2048\naddi a0,zero,-1\nand a3,zero,a1\nsltu t1,zero,a6\nsltiu a1,a1,0\nsltiu s2,s1,2047\nbne s11,a5,12\nlw a0,1892(s11)\nlw t0,212(s11)\nand a4,sp,a3\naddi t5,zero,4\nsltiu s2,s0,2047\nand a1,a7,a4\naddi t5,t5,-1\nbne t5,zero,-12\nsltiu a1,a6,7\nsrl s4,s4,s11\nsw t2,1524(s11)\nsw s1,1756(s11)\nand a5,s4,t0\nbge a7,a6,12\nsw s4,436(s11)\nsw s0,224(s11)\njal ra,8\naddi s0,t1,100\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1102,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2'\n",
+      "source": "lui s11,65536\naddi a6,zero,100\naddi t2,zero,2\naddi a5,zero,303\naddi s4,zero,7\nsltiu s4,t2,84\nlw s0,812(s11)\nand a4,a2,a1\nlui t1,305418240\nand a0,sp,s3\nand s1,s0,zero\nsltiu a4,a6,-1\nsltu t2,a6,t2\nbne a4,a1,16\nadd a3,a2,a4\nsltu s0,a7,a5\nsrl a4,t2,a4\nslt s3,s2,a1\nsrl t1,s4,s4\nand a0,s0,a1\nlw s3,1476(s11)\nbeq a5,a0,8\nslt s3,t1,a4\nsltiu t1,t1,-2048\njal ra,8\naddi a3,s1,7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1103,
+      "kind": "diverge",
+      "detail": "simulator did not halt but the reference did",
+      "source": "lui s11,65536\naddi a7,zero,-1\naddi a5,zero,1\naddi a2,zero,-1\naddi s3,zero,2047\nsll a3,s11,s0\nsw s1,1792(s11)\nsw t1,616(s11)\nsub s4,t0,a1\naddi a1,t1,1\nslt a2,a3,a3\nbeq a0,a4,12\nsltiu a4,s4,-100\nlw a4,856(s11)\nauipc t4,0\njalr ra,t4,12\naddi t1,t2,1\naddi t6,zero,2\nsw s0,376(s11)\naddi a4,a0,-1\naddi t6,t6,-1\nbne t6,zero,-12\naddi t5,zero,2\nsrl s3,sp,s3\nsltiu a4,a2,2\nand s3,a5,sp\naddi t5,t5,-1\nbne t5,zero,-16\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1105,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2147483648'\n",
+      "source": "lui s11,65536\naddi t0,zero,0\naddi t1,zero,-792\naddi s1,zero,-240\naddi a3,zero,1125\naddi s1,t2,0\naddi t1,s3,2\nsub t1,a2,t2\nsltiu a5,t0,1\nadd a1,a2,sp\naddi t6,zero,1\naddi s2,s11,0\nor a3,s4,sp\nsll a0,a1,a5\naddi t6,t6,-1\nbne t6,zero,-16\nbltu a6,a4,16\nsub a2,t0,t2\nsltiu s3,a2,7\nsrl a2,a1,s0\nlui s2,-2147483648\nsltiu a6,s2,100\nsll s0,sp,s11\nsltiu a2,t2,-1\njal ra,8\nsub a4,a5,s3\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1107,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '65536'\n",
+      "source": "lui s11,65536\naddi s1,zero,100\naddi a1,zero,0\naddi a0,zero,7\naddi a6,zero,1279\nsll s4,a7,a0\naddi t6,zero,1\nsll s4,a7,t2\nslt a3,a7,sp\naddi t6,t6,-1\nbne t6,zero,-12\naddi t1,a3,-8\nsltu a6,a2,s2\nbgeu s1,a7,16\nlui a5,-4096\naddi t0,sp,-8\nsltu s2,a4,a7\nlw a4,1896(s11)\nauipc t4,0\njalr ra,t4,12\naddi s1,sp,0\nbeq s11,a6,12\nsltiu a4,t2,-2048\nsltiu a2,s11,100\njal ra,8\nslt t2,t1,t2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1108,
+      "kind": "diverge",
+      "detail": "s3: sim 0x00000000 ref 0x00010000",
+      "source": "lui s11,65536\naddi a2,zero,-100\naddi a7,zero,-8\naddi a5,zero,7\naddi s2,zero,1\naddi t5,zero,2\nslt a7,a3,a5\nxor a2,sp,a4\nsll s3,a3,t2\naddi t5,t5,-1\nbne t5,zero,-16\nand s3,a7,a3\nblt t2,t2,16\nsw a6,2028(s11)\nsub s3,s11,a3\nor s2,t1,a6\nxor a0,t2,zero\nsll a4,s2,a2\nlui t0,-4096\nauipc t4,0\njalr ra,t4,12\nlui t1,-2147483648\nbge zero,a0,8\nand s3,sp,t2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1109,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2'\n",
+      "source": "lui s11,65536\naddi a7,zero,-2048\naddi t1,zero,-2048\naddi a2,zero,2\naddi a5,zero,2\nsw s3,1688(s11)\nxor s4,zero,s11\naddi s0,a2,-100\nsll a0,t2,a1\nsltiu a6,a2,0\nand a5,a6,s11\nxor a7,s1,a2\nxor a4,a3,a7\nlw s1,1108(s11)\nsub a3,a1,a0\nlw a2,824(s11)\nbltu t2,t0,16\nsrl a7,a3,a4\nlui t2,65536\naddi a1,sp,7\nlui a2,4096\nbeq t1,s1,8\nsltiu s0,t1,2047\nsltiu s0,t0,-100\njal ra,8\nadd a0,a0,s3\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1110,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '2147479552'\n",
+      "source": "lui s11,65536\naddi s4,zero,0\naddi s0,zero,7\naddi a5,zero,1\naddi a4,zero,7\nsub t0,s11,a7\nbeq s3,a5,12\nor t0,t1,a5\nand t2,s3,t0\nsltiu s0,t1,1952\nlw a1,1084(s11)\naddi t6,zero,5\nsltu a7,s4,s0\naddi t6,t6,-1\nbne t6,zero,-8\nsltiu s1,s0,2047\nsltiu t1,a2,1\nsll a4,t0,s3\nlui s4,2147479552\nor a6,a1,a3\nlui a4,-4096\naddi a3,a0,-8\nsltiu s4,s4,2\nbge s0,a7,12\nand a5,a1,a6\nsltiu s1,s2,-2048\njal ra,8\nsltiu s4,s3,7\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1111,
+      "kind": "diverge",
+      "detail": "t2: sim 0x00000000 ref 0x00000001, t4: sim 0x00000024 ref 0x00000030",
+      "source": "lui s11,65536\naddi a1,zero,-8\naddi s0,zero,1\naddi a0,zero,1\naddi a7,zero,722\nsll a3,t1,a6\nsltu a1,s1,zero\nlw s0,1768(s11)\nor a4,a2,s1\nauipc t4,0\njalr ra,t4,12\nadd t0,a0,a1\nauipc t4,0\njalr ra,t4,12\nsw a6,664(s11)\naddi a0,a4,-100\nlui s3,-4096\nsrl a2,s1,a2\nlui a4,305418240\nsll s1,t2,zero\nsltiu t2,s2,-1\naddi t6,zero,6\nsw a0,172(s11)\nsltiu a0,a2,2047\naddi a4,sp,2\naddi t6,t6,-1\nbne t6,zero,-16\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1112,
+      "kind": "diverge",
+      "detail": "a2: sim 0x00000000 ref 0xfffff582",
+      "source": "lui s11,65536\naddi a4,zero,100\naddi t1,zero,-2048\naddi s1,zero,-1\naddi a7,zero,2047\naddi s1,t1,0\nbgeu a4,s3,8\nor s1,a0,a1\naddi s4,zero,-100\nlui a7,305418240\nor s1,zero,a5\nsw s0,8(s11)\nlui a5,305418240\nauipc t4,0\njalr ra,t4,12\naddi a1,s4,-1216\naddi a2,t1,-638\nsrl a7,s11,sp\nsw a3,2008(s11)\nsw a3,1052(s11)\nbge a3,a2,8\nadd a5,s3,s2\naddi a4,a1,2047\nsw t2,1196(s11)\njal ra,8\nlw a2,1864(s11)\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1113,
+      "kind": "diverge",
+      "detail": "t1: sim 0x00000000 ref 0x00000007, a0: sim 0x00000000 ref 0x00000001, s2: sim 0x00000000 ref 0x80000000",
+      "source": "lui s11,65536\naddi t0,zero,0\naddi s4,zero,1\naddi s0,zero,-1552\naddi t1,zero,-2048\nbltu t1,sp,16\nsub s0,a3,t0\nsltu a0,a6,a5\nsll t1,a6,t0\naddi s3,a2,-8\nsrl a4,t0,s3\nsltiu s0,s2,125\nauipc t4,0\njalr ra,t4,12\naddi s1,s4,-2048\nsll a4,a7,s0\nor a1,a0,zero\nsrl a6,sp,a3\nsltiu a0,a4,-100\naddi t6,zero,1\nsltiu a4,s2,2\naddi t6,t6,-1\nbne t6,zero,-8\nbge s3,s2,12\naddi t1,a3,7\nlui s2,-2147483648\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1115,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi a3,zero,-285\naddi a0,zero,1263\naddi t0,zero,-2048\naddi s2,zero,-2048\naddi t1,a4,-1\nor a4,a5,a1\nor a0,s1,t0\nxor a4,a2,s4\naddi t6,zero,4\nsrl s3,a5,s0\naddi t6,t6,-1\nbne t6,zero,-8\nsltiu a2,s2,2047\nadd s2,a1,s2\nsll a3,t0,s4\nlw s0,2000(s11)\nbgeu a7,a7,8\nsw a7,548(s11)\nand s2,zero,s0\nbgeu a0,t2,12\nor a5,s11,a1\nslt a4,t2,t1\nxor a1,s11,t2\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1116,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967295'\n",
+      "source": "lui s11,65536\naddi s2,zero,1\naddi s1,zero,2047\naddi a6,zero,-1\naddi a3,zero,-2048\nsw a4,124(s11)\nlui t2,-4096\nor s3,sp,t1\naddi t6,zero,1\nlw a7,1944(s11)\nsltiu a6,a6,2047\nsltiu a1,t0,2047\naddi t6,t6,-1\nbne t6,zero,-16\nsrl s0,t2,a3\nor a4,a5,t0\nbne a3,s11,12\nadd s2,a4,t1\nxor s4,a3,a0\nauipc t4,0\njalr ra,t4,12\nsltiu a1,s1,-100\nsw a0,1832(s11)\nlw a2,1864(s11)\njal ra,8\nsll t2,a5,a6\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1117,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294965248'\n",
+      "source": "lui s11,65536\naddi s3,zero,-8\naddi a3,zero,-8\naddi t0,zero,7\naddi a5,zero,-2048\nauipc t4,0\njalr ra,t4,12\nsltiu s2,a3,-1\naddi s4,t2,7\naddi t1,a6,-8\nsrl a2,s3,s0\nsltu a6,a5,s0\nsltiu a7,s3,2\nsw s2,1744(s11)\nand t1,a7,t2\nsw a7,24(s11)\naddi t6,zero,3\nsltiu s1,s3,-100\naddi a2,s0,2\naddi t6,t6,-1\nbne t6,zero,-12\nsrl a5,a4,a3\nadd t2,a5,s11\nbge s4,a0,8\nsw a6,1952(s11)\nbeq zero,zero,0\n"
+    },
+    {
+      "seed": 1119,
+      "kind": "sim-crash",
+      "detail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sahilnain/Documents/RISC-Simulator-And-Assember/Simulator.py\", line 84, in twos_complement_to_decimal\n    decimal_value = int(binary_str, 2)\n                    ^^^^^^^^^^^^^^^^^^\nValueError: invalid literal for int() with base 2: '4294967196'\n",
+      "source": "lui s11,65536\naddi t1,zero,0\naddi a3,zero,-100\naddi a4,zero,0\naddi t0,zero,0\nbgeu a2,zero,8\nlw t0,1220(s11)\nlw s0,732(s11)\naddi t5,zero,5\naddi t0,s11,620\nadd s0,s11,t0\naddi t5,t5,-1\nbne t5,zero,-12\nsltiu a2,a1,100\nadd a6,s0,a5\nsw a2,916(s11)\nslt a6,a3,t0\nsltiu s2,s0,-144\nsw t0,328(s11)\nsltiu t1,a3,7\nsub a6,sp,t0\nsll t0,s4,s2\naddi s3,zero,0\nor t2,a3,s1\nbeq zero,zero,0\n"
+    }
+  ]
+}
