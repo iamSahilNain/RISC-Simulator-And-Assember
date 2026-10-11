@@ -1,0 +1,19 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update && sudo apt-get install -y llvm
+      - run: pip install pytest unicorn
+      - name: locate llvm-mc
+        run: echo "LLVM_MC=$(command -v llvm-mc || ls /usr/bin/llvm-mc-* | sort -V | tail -1)" >> "$GITHUB_ENV"
+      - run: python -m pytest -q tests
+      - run: python -m verify encode -n 200 --seed 1 --out results/ci_encode.json
+      - run: python -m verify exec -n 40 --seed 9000 --out results/ci_exec.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: results, path: results/ci_*.json }
