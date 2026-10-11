@@ -88,6 +88,23 @@ def twos_complement_to_decimal(binary_str):
 
     return decimal_value
 
+def signed32(v):
+    """Interpret a stored (unsigned, masked) register value as a signed 32-bit integer."""
+    v &= 0xFFFFFFFF
+    return v - 0x100000000 if v & 0x80000000 else v
+
+def mem_key(addr):
+    """Validate a data address: word-aligned and inside the 4 KB data region."""
+    addr &= 0xFFFFFFFF
+    if addr % 4 != 0:
+        print(f"ERROR: unaligned memory access at 0x{addr:08x}")
+        sys.exit(1)
+    key = hex(addr)
+    if key not in memory:
+        print(f"ERROR: memory access outside 0x00010000-0x00010FFC at 0x{addr:08x}")
+        sys.exit(1)
+    return key
+
 def sign_extend(binary_str):
     if binary_str[0] == '1':
         return '1' * (32 - len(binary_str)) + binary_str
@@ -123,23 +140,19 @@ def print_registers(pc):
 
 def i_type(opcode, rd, funct3, rs1, imm, pc):
     if opcode == "0000011":  # lw
-        loc = hex(get_register(rs1) + imm)
+        loc = mem_key(get_register(rs1) + imm)
         set_register(rd, memory[loc])
         
     elif opcode == "0010011" and funct3=="000":  # addi
         set_register(rd, get_register(rs1) + imm)
         
-    elif opcode == "1100111" and funct3=="000":  # jalr
+    elif opcode == "1100111" and funct3=="000":  # jalr: target = (rs1 + imm) & ~1, computed before rd is written
+        target = (get_register(rs1) + imm) & 0xFFFFFFFE
         set_register(rd, pc + 4)
-        pc_str = dec_to_bin(pc, 32)
-        pc_str = pc_str[:-1] + "0"
-        pc = twos_complement_to_decimal(pc_str)
-        pc = pc + imm   
+        pc = target
         
-    elif opcode == "0010011" and funct3=="011":  # sltiu
-        n1 = twos_complement_to_decimal(str(get_register(rs1)))
-        n1 = unsigned_b2d(str(n1))    
-        if n1 < imm:
+    elif opcode == "0010011" and funct3=="011":  # sltiu: sign-extend imm, then compare both as unsigned
+        if get_register(rs1) < (imm & 0xFFFFFFFF):
             set_register(rd, 1)
         else:
             set_register(rd, 0)
@@ -159,21 +172,19 @@ def r_type(rd, funct3, rs1, rs2, funct7):
         set_register(rd, get_register(rs1) - get_register(rs2))
         
     elif funct3 == "001":  # sll
-        shift_amount = abs(get_register(rs2)) & 0b11111 
+        shift_amount = get_register(rs2) & 0b11111 
         shifted_rs1 = get_register(rs1) << shift_amount
         set_register(rd, shifted_rs1)
 
-    elif funct3 == "010":  # slt
-        if get_register(rs1) < get_register(rs2):
+    elif funct3 == "010":  # slt: signed comparison
+        if signed32(get_register(rs1)) < signed32(get_register(rs2)):
             set_register(rd, 1)
         else:
             set_register(rd, 0)
             
-    elif funct3 == "011":  # sltu
-        n1 = twos_complement_to_decimal(str(get_register(rs1)))
-        n2 = twos_complement_to_decimal(str(get_register(rs2)))
-        n1 = unsigned_b2d(str(n1))
-        n2 = unsigned_b2d(str(n2))
+    elif funct3 == "011":  # sltu: registers already hold unsigned 32-bit values
+        n1 = get_register(rs1)
+        n2 = get_register(rs2)
         if n1 < n2:
             set_register(rd, 1)
         else:
@@ -200,7 +211,7 @@ def u_type(opcode, rd, imm, registers, pc):
         set_register(rd, imm + pc)
 
 def s_type(imm, rs1, rs2):
-    loc = hex(get_register(rs1) + imm)
+    loc = mem_key(get_register(rs1) + imm)
     memory[loc] = get_register(rs2)
     
 def b_type(imm, funct3, pc, rs1, rs2):
@@ -211,10 +222,10 @@ def b_type(imm, funct3, pc, rs1, rs2):
         branch_condition = rs1_val == rs2_val
     elif funct3 == "001":  # bne
         branch_condition = rs1_val != rs2_val
-    elif funct3 == "100":  # blt
-        branch_condition = rs1_val < rs2_val
-    elif funct3 == "101":  # bge
-        branch_condition = rs1_val >= rs2_val
+    elif funct3 == "100":  # blt (signed)
+        branch_condition = signed32(rs1_val) < signed32(rs2_val)
+    elif funct3 == "101":  # bge (signed)
+        branch_condition = signed32(rs1_val) >= signed32(rs2_val)
     elif funct3 == "110":  # bltu
         # Convert to unsigned
         rs1_val = rs1_val & 0xFFFFFFFF

@@ -1,0 +1,9 @@
+{
+  "n": 1000,
+  "seed": 5000,
+  "counts": {
+    "agree": 1000
+  },
+  "seconds": 43.2,
+  "candidates": []
+}

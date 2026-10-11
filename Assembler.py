@@ -111,11 +111,12 @@ labels = {}
 lines = 0
 is_hault = False
 hault_no = 0
+read = [j for j in read if j.strip()]   # blank lines emit no machine code, so they must not shift offsets
 for j in read:
     if ":" in j:
         index = j.index(":")
         labels[j[:index]]= lines
-        read[lines] = j[index+2:]
+        read[lines] = j[index+1:].lstrip()
     lines += 1
     if "beq zero,zero,0" in read[lines-1]:
         is_hault = True
@@ -306,17 +307,14 @@ for i in read:
             break
 
 
-        if(given_value<-2**20 or given_value> 2**20-1):
-            print(f"ERROR on line {count+1}:the immediate value is out of bounds")
-            break
-           
         if(i_list[1] not in register_dict):
             print("ERROR: registers not defined")
             break
 
 
-        imm=imm_to_bin(int(i_list[2]),21)
-        s=imm[1]+imm[10:20]+imm[10]+imm[2:10]+register_dict[i_list[1]]+"1101111"
+        imm=imm_to_bin(lab,21)
+        # J-type immediate order is imm[20] | imm[10:1] | imm[11] | imm[19:12]; imm[0] here is bit 20
+        s=imm[0]+imm[10:20]+imm[9]+imm[1:9]+register_dict[i_list[1]]+"1101111"
         output.append(s)
 
     elif i_list[0] in bonus:
@@ -330,6 +328,7 @@ for i in read:
 
         elif i_list[0] == "rvrs":
             s = "0000000" + "00000" + register_dict[i_list[2]] +  bonus[i_list[0]] + register_dict[i_list[1]] + "1111111"
+        output.append(s)
     else:
         print("ERROR: Invalid Instruction")
         break        
